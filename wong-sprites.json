@@ -1,0 +1,29 @@
+{"frames": [
+
+{
+	"filename": "wong",
+	"frame": {"x":0,"y":0,"w":307,"h":286},
+	"spriteSourceSize": {"x":0,"y":0,"w":307,"h":286},
+	"sourceSize": {"w":307,"h":286}
+},
+{
+	"filename": "halibut",
+	"frame": {"x":0,"y":286,"w":520,"h":227},
+	"spriteSourceSize": {"x":0,"y":0,"w":520,"h":227},
+	"sourceSize": {"w":520,"h":227}
+},
+{
+	"filename": "cod",
+	"frame": {"x":0,"y":513,"w":384,"h":147},
+	"spriteSourceSize": {"x":0,"y":0,"w":384,"h":147},
+	"sourceSize": {"w":384,"h":147}
+},
+{
+	"filename": "blowfish",
+	"frame": {"x":0,"y":660,"w":107,"h":96},
+	"spriteSourceSize": {"x":0,"y":0,"w":107,"h":96},
+	"sourceSize": {"w":107,"h":96}
+}
+
+]
+}
