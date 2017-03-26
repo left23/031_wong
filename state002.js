@@ -24,9 +24,9 @@ myPlate.State002.prototype = {
     aliceText.text = "Please show yourself in. Alice is waiting in the back.";
     aliceText.alpha = 0;
 
-    this.add.tween(halibutText).to( { alpha: 1 }, 1000, Phaser.Easing.Cubic.InOut, true);
-    this.add.tween(halibutText).to( { alpha: 0 }, 3000, Phaser.Easing.Cubic.InOut, true, 2000);
-    this.add.tween(aliceText).to( { alpha: 1 }, 3000, Phaser.Easing.Cubic.InOut, true, 5000);
+    tweenA = this.add.tween(halibutText).to( { alpha: 1 }, 1000, Phaser.Easing.Cubic.InOut, true);
+    tweenB = this.add.tween(aliceText).to( { alpha: 1 }, 3000, Phaser.Easing.Cubic.InOut, true, 5000);
+    tweenA.chain(tweenB);
 
     //this.game.state.start('State002');
 
