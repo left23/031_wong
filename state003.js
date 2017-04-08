@@ -8,6 +8,71 @@ myPlate.State003 = function (game) {
 var wong;
 var halibut;
 var delay = 2000;
+var square;
+
+
+p5.midi.onInput = function(event) {
+  //console.log(event);
+
+  myMidi = {};
+  myMidi.data = [event.data[0], event.data[1], event.data[2]];
+
+  printMidi(myMidi);
+
+}
+
+function printMidi(myMidi) {
+
+  var currentKnobPosition = myMidi.data[2];
+  console.log("currentKnobPosition: " + currentKnobPosition);
+
+  //if (myMidi.data[0] == 176) {
+
+
+    //console.log('I am a knob');
+
+
+    //if (myMidi.data[1] == 21 && myMidi.data[2] < 176 && myMidi.data[2] > 0) {
+
+
+
+      var increment = game.width/127;
+
+      //console.log('knobPositions ' + knobPositions);
+      console.log('currentKnobPosition ' + currentKnobPosition);
+      //console.log('increment ' + increment);
+
+      //for (var i = 0; i <= knobPositions.length; i++ ) {
+      //  console.log('i ' + i);
+      //}
+
+      var origBlowfishWidth = 107;
+      var origBlowfishHeight = 96;
+
+      if (currentKnobPosition * increment < origBlowfishWidth) {
+        blowfish.width = origBlowfishWidth;
+        blowfish.hight = origBlowfishHeight;
+        square.resize(50,50);
+      } else {
+        blowfish.width = currentKnobPosition * increment;
+        blowfish.height = currentKnobPosition * increment;
+        square.resize(currentKnobPosition * increment, currentKnobPosition * increment);
+        console.log("currentKnobPosition: " + currentKnobPosition);
+        console.log('desired width: ' + currentKnobPosition * increment);
+        console.log('blowfish: ' + blowfish.scale);
+        console.log('square: ' + square);
+      }
+
+
+    //}
+
+  //}
+
+}
+
+
+
+
 
 myPlate.State003.prototype = {
 
@@ -16,7 +81,6 @@ myPlate.State003.prototype = {
   },
 
   create: function () {
-
 
     this.stage.backgroundColor = '#000000';
 
@@ -55,19 +119,19 @@ myPlate.State003.prototype = {
 
     blowfish = fish.create(271, 90, 'sprites');
     blowfish.frameName = 'blowfish';
-    blowfish.scale.setTo(1.5);
     blowfish.price = '40';
+
 
     cod = fish.create(84, 318, 'sprites');
     cod.frameName = 'cod';
     cod.price = '10';
 
-    fish.setAll('alpha', 0);
+    //fish.setAll('alpha', 0);
     fish.setAll('inputEnabled', true);
     fish.callAll('events.onInputDown.add','events.onInputDown', introAction);
 
 
-    fish.alpha = 1;
+    //fish.alpha = 1;
     var priceText =  { font: 'bold 24pt Arial', fill: 'black', align: 'center'};
 
 
@@ -92,13 +156,20 @@ myPlate.State003.prototype = {
 
     this.add.tween(cod).to( { alpha: 1 }, 3000, Phaser.Easing.Cubic.InOut, true, 2000);
     this.add.tween(halibut).to( { alpha: 1 }, 3000, Phaser.Easing.Cubic.InOut, true, 3000);
-    this.add.tween(blowfish).to( { alpha: 1 }, 3000, Phaser.Easing.Cubic.InOut, true, 4000);
+    //this.add.tween(blowfish).to( { alpha: 1 }, 3000, Phaser.Easing.Cubic.InOut, true, 4000);
 
+
+    square = new Phaser.Rectangle(game.world.centerX, game.world.centerY, 50, 50);
 
   },
 
   update: function () {
 
+
+  },
+  render: function () {
+
+    game.debug.geom(square,'#0fffff');
 
   }
 
