@@ -7,6 +7,12 @@
 	"sourceSize": {"w":307,"h":286}
 },
 {
+	"filename": "wong-rev",
+	"frame": {"x":327,"y":0,"w":191,"h":286},
+	"spriteSourceSize": {"x":327,"y":0,"w":191,"h":286},
+	"sourceSize": {"w":191,"h":286}
+},
+{
 	"filename": "halibut",
 	"frame": {"x":0,"y":286,"w":520,"h":227},
 	"spriteSourceSize": {"x":0,"y":0,"w":520,"h":227},

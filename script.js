@@ -15,5 +15,5 @@ var states = {
 
 for(var state in states)
 game.state.add(state, states[state]);
-game.state.start('State003');
+game.state.start('State001');
 
