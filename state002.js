@@ -8,8 +8,16 @@ myPlate.State002.prototype = {
 
   preload: function () {
 
-    wong = this.add.sprite(0, 70, 'sprites');
-    wong.frameName = 'wong';
+    bg = this.add.sprite(0, 0, 'bg');
+
+    rain = this.add.sprite(357, 43, 'rain');
+
+
+    wong = this.add.sprite(32, 8, 'sprites');
+    wong.frameName = 'smiley-wong';
+
+    pot = this.add.sprite(0, 207, 'sprites');
+    pot.frameName = 'pot';
 
     halibut = this.add.sprite(280, 181, 'sprites');
     halibut.frameName = 'halibut';
@@ -31,7 +39,6 @@ myPlate.State002.prototype = {
     aliceText.alpha = 0;
 
     tweenA = this.add.tween(halibutText).to( { alpha: 1 }, 1000, Phaser.Easing.Cubic.InOut, true);
-    tweenB = this.add.tween(aliceText).to( { alpha: 1 }, 3000, Phaser.Easing.Cubic.InOut, true, 1000);
 
 
 
@@ -71,18 +78,20 @@ function removeGroup() {
 
 function over() {
   console.log('button over');
-  wong.frameName = 'wong-rev';
+  wong.frameName = 'frowney-wong';
+
+  tweenB = this.add.tween(aliceText).to( { alpha: 1 }, 1000, Phaser.Easing.Cubic.InOut, true);
 }
 
 function out() {
   console.log('button out');
-  wong.frameName = 'wong';
+  wong.frameName = 'smiley-wong';
 }
 
 function actionOnClick () {
 
   console.log('button clicked');
-  wong.frameName = 'wong-rev';
+  wong.frameName = 'neutral-wong';
   this.game.state.start('State003');
 
 }

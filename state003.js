@@ -18,8 +18,9 @@ myPlate.State003.prototype = {
 
     var wonderland = this.add.sprite(0, 0, 'wonderland');
 
-    aliceMsg = this.add.text(250, 16, '', {fill: '#ffffff'});
+    aliceMsg = this.add.text(150, 420, '', {fill: '#ffffff'});
     aliceMsg.text = "Welcome. Nice to see you again.";
+
     aliceMsg.alpha = 0;
     this.add.tween(aliceMsg).to({alpha: 1}, 3000, Phaser.Easing.Cubic.InOut, true);
 
