@@ -85,8 +85,6 @@ myPlate.State001.prototype = {
 
       nameTag.drawRect(item.centerX - (fishName.width / 2), item.y, fishName.width, fishName.height);
 
-
-
     });
 /*
     this.add.tween(cod).to({alpha: 1}, 1500, Phaser.Easing.Cubic.InOut, true, 1000);
