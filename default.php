@@ -11,7 +11,7 @@
   <body>
     <div id="world"></div>
     <script src='state001.js'></script>
-    <script src='script.js'></script>
+    <script src='start.js'></script>
   </body>
 </html>
 
